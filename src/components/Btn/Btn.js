@@ -7,7 +7,7 @@ const Btn = () => {
     return ( 
         <div className="wrapper">
         <div className="btn">
-            <p><span><b>P</b>RESS</span></p>
+            <p><span><b>S</b>earch</span></p>
             <figure></figure>
             <figure></figure>
             <figure></figure>

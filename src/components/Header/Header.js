@@ -4,7 +4,7 @@ import headImg from '../../img/search.jpg';
 import Btn from '../Btn/Btn'
 
 const HeaderImg = styled.img.attrs({ src: `${headImg}`})`
-width: 100vw;
+width: 100%;
 max-height: 10vh;
 position: absolute;
 object-fit: cover;
@@ -17,7 +17,7 @@ postition: absolute;
 top: 0;
 left: 0;
 height: 10vh;
-width: 100vw;
+width: 100%;
 text-transform: uppercase;
 `;
 const Logo = styled.h1`
@@ -32,9 +32,8 @@ z-index: 5;
 const Header = () => {
 
     return ( 
-        <StyledHeader>
+        <StyledHeader >
             <HeaderImg />
-            <Btn />
         <Logo>Video games search</Logo>
     </StyledHeader>
      );

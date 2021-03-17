@@ -4,10 +4,11 @@ import Header from './components/Header/Header'
 import { API_URL, SEARCH_URL } from './data.js'
 import GamesList from './components/GamesList/GamesList'
 import styled from 'styled-components'
+import Btn from './components/Btn/Btn'
 
 const MainPage = styled.div`
 height: 100vh;
-widht: 100vw;
+width: 100vw;
 display: flex;
 flex-flow: wrap;
 `
@@ -18,20 +19,21 @@ flex-direction: row;
 justify-content: flex-end;
 padding: 4px 6px;
 font-size: 1rem;
+margin-right:yy
 border: 0;
 border-radius: 5px;
 width: 50%;
 height: 2rem;
-margin-right: 10%;
 outline: none;
 box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.295);
 `;
 
 const Search = styled.div`
 position: absolute;
-top: 1.5rem;
+top: 2rem;
 right: 0;
 display: flex;
+justify-content: center;
 align-items: center;
 width: 35%;
 height: 2rem;
@@ -43,7 +45,7 @@ height: 2rem;
   font-size: 1rem;
   border: 0;
   border-radius: 5px;
-  width: fit-content;
+  width: 4rem;
   height: 2rem;
   margin-right: 2%;
   outline: none;
@@ -54,7 +56,7 @@ height: 2rem;
   &>button:hover,
   &>button:focus {
     transform: scale(0.92);
-  }
+  } 
 `;
 
 

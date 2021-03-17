@@ -1,24 +1,23 @@
 
 .wrapper {
-    margin: 300px auto;
-    width: 400px;
-    height: 400px;
+    margin: 0 3rem;
+    width: 4rem;
+    height: 4rem;
     display: flex;
     justify-content: center;
     text-align: center;
     position: absolute;
-    top: 2vh;
-    right: 3vw;
+    top: 0;
+    right: 0;
     z-index: 10;
+    opacity: 0;
 }
 
 .btn {
-    width: 60px;
-    height: 40px;
-    position: relative;
-    background-color: rgb(29, 22, 68);
+    height: 3rem;
+
+    background-color: rgba(160, 146, 238, 0.829);
     border: 1px solid rgba(9, 95, 48, 0.699);
-    margin-right: 3vw;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.76), 0px 0px 10px rgba(0, 0, 0, 0.582);
@@ -33,17 +32,19 @@ a {
 }
 
 .btn p {
-    width: 50px;
-    height: 25px;
+    width: 5rem;
+    height: 2rem;
     background-color:  rgb(29, 22, 68);
+    color: white;
     line-height: 50px;
-    font-size: 1vh;
+    font-size: 1rem;
     font-family: 'Gayathri';
+    text-transform: uppercase;
     position: relative;
     z-index: 5;
     font-weight: 900;
-    margin-top: 8px;
-    margin-left: 4px;
+    padding: 4px 8px;
+    margin: 6px;
     border-radius: 10px;
 }
 
