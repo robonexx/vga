@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './Vga.css';
 import Header from './components/Header/Header'
-import { API_URL, SEARCH_URL } from './data.js'
 import GamesList from './components/GamesList/GamesList'
 import styled from 'styled-components'
 import Btn from './components/Btn/Btn'
+
+const API_URL = process.env.REACT_APP_API_URL
+const API_KEY = process.env.REACT_APP_API_KEY
+const Game_search_url = `${process.env.REACT_APP_API_URL} ?key= ${process.env.REACT_APP_API_KEY} &search=`
 
 const MainPage = styled.div`
 height: 100vh;
 width: 100vw;
 display: flex;
 flex-flow: wrap;
-`
+`;
 
 const Input = styled.input`
 display: flex;
@@ -19,7 +22,7 @@ flex-direction: row;
 justify-content: flex-end;
 padding: 4px 6px;
 font-size: 1rem;
-margin-right:yy
+margin-right: 1rem;
 border: 0;
 border-radius: 5px;
 width: 50%;
@@ -65,39 +68,32 @@ function Vga() {
   const [games, setGames] = useState([]);
   /* const [currentPage, setCurrentPage] = useState(null) */
   const [searchGames, setSearchGames] = useState('');
-
-  useEffect(() => {
+  console.log(games) 
   
-  fetch(API_URL)
+
+  useEffect(() => {  
+  fetch(`${API_URL}?key=${API_KEY}`)
   .then(res => res.json())
   .then(data => {setGames(data.results);
-    console.log(data.results)
   })
-  .catch((e) => {
-    console.log(e)
-  });    
+  .catch((err) => {
+    console.error(err.message)
+  });
     
   }, []) 
 
-  const handleSearch = () => {
-  
-  fetch(API_URL + SEARCH_URL + `${searchGames}`)
+  const handleSearch = () => {  
+  fetch(Game_search_url + `${searchGames}`)
   .then(res => res.json())
-  .then(data => {setGames(data.results);
-     
-  })
-  .catch((e) => {
-    console.log(e)
-  });
-  
+    .then(data => setGames(data.results))
+  setSearchGames('')
 };
 
 
 
   return (
     <MainPage className="Vga">
-      <Header />
-      
+      <Header />      
       <Search>
       <Input className="search" 
             type="text" 

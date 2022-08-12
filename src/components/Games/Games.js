@@ -2,10 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import './Games.css'
 import ReactPlayer from 'react-player'
+import {RiPlaystationLine, RiXboxFill, RiMacLine, RiWindowsFill, RiAndroidLine, RiAppleFill } from 'react-icons/ri'
+import {DiLinux } from 'react-icons/di'
+import {SiNintendo } from 'react-icons/si'
 
 
  const GameCard = styled.li`
-position: relative;
+  position: relative;
   margin: 1.5rem 2rem;
   width: 260px;
   background-color: #fafafa;
@@ -42,7 +45,7 @@ span {
 
  `;
 /*
- &>.movie-review {
+ &>.game-review {
     position: absolute;
   background: #e1e2e3;
   color: black;
@@ -74,28 +77,73 @@ span {
  */
 
 
-const GameItem = ({ game }) => (
+const GameItem = ({ game }) => {  
 
+
+  return(
     
-    <GameCard className="game">
-        <img src={game.background_image} alt={game.name}/>
-        <div className="game-info">
-            <h4>{game.name.toUpperCase()}</h4>
-            <span>Score: {game.rating}/5</span>
-            </div>
-
-          
-           <div className="game-review">
-            
-            {game.clip && <ReactPlayer url={game.clip.clip}
-            playing={false}
-            width={240}
-            height={180}
-            controls = {true}
-            />}
-        </div> 
+      <GameCard className="game" key={game.id}>
+          <img src={game.background_image} alt={game.name}/>
+            <div className="game-info">
+              <h4>{game.name.toUpperCase()}</h4>
+              <div>
+                <span>Score: {game.rating}/5</span>
+                {game.parent_platforms.map(p => 
+                  (
+                    <>
+                     <span key={Math.random() * 123}>{p.platform.name 
+                    ?
+                     (p.platform.name === 'PC' ? <RiWindowsFill /> : null
+                    ||  p.platform.name === 'PlayStation' ? <RiPlaystationLine /> : null
+                    || p.platform.name === 'Xbox' ?  <RiXboxFill />  : null 
+                    || p.platform.name === 'Nintendo'?  <SiNintendo /> : null
+                    || p.platform.name === 'Apple Macintosh' ? <RiMacLine /> : null
+                    || p.platform.name === 'Linux' ? <DiLinux /> : null
+                    || p.platform.name === 'Android' ?  <RiAndroidLine /> : null
+                    || p.platform.name === 'iOS' ? <RiAppleFill /> : null
+                    )   : p.platform.name          
+                    }</span>
+                    </>
+                  ))}
+              </div> 
+              
+              
+              </div>
   
-    </GameCard>
-);
+            
+             <div className="game-review">
+        {game.shot_screenthot} 
+              {/* {game.clip && <ReactPlayer url={game.clip.clip}
+              playing={false}
+              width={240}
+              height={180}
+              controls = {true} */}
+             
+          </div> 
+    
+      </GameCard>
+  );
+}
+
 
 export default GameItem;
+
+/* 
+    
+     p.platform.name === 'Nintendo'?  <SiNintendo /> : null
+     p.platform.name === 'Apple Macintosh' ? <RiMacLine /> : null
+     p.platform.name === 'Linux' ? <DiLinux /> : null
+     p.platform.name === 'Android'?  <RiAndroidLine /> : null
+     p.platform.name === 'iOS' ? <RiAppleFill /> : null
+      {game.parent_platforms.map(p => 
+                  (
+                    <>
+                    <span key={Math.random() * 123}>{p.platform.name 
+                    || p.platform.name === 'PC' ? <RiWindowsFill /> : ''
+                    ||  p.platform.name === 'PlayStation' ? <RiPlaystationLine /> : ''
+                    || p.platform.name === 'Xbox' ?  <RiXboxFill /> : ''                    
+                    }</span>
+                    </>
+                  ))}
+ 
+  */

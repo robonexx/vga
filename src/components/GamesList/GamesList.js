@@ -7,7 +7,7 @@ display: flex;
 list-style-type: none; 
 flex-wrap: wrap;
 width: 100vw;
-heigth: 100vh;
+height: 100vh;
 `;
 
 const GamesList = ({ games }) => {
@@ -17,7 +17,8 @@ const GamesList = ({ games }) => {
         <UlGames>
         {games.length > 0 && games.map(game => {
                 return(
-                <GameItem game={game} key={game.id}/>);
+                        <GameItem game={game} key={game.id } />
+                );
         })}
             </UlGames> 
         </>
