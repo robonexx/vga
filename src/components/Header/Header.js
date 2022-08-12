@@ -1,16 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import headImg from '../../img/search.jpg';
 import Btn from '../Btn/Btn'
-
-const HeaderImg = styled.img.attrs({ src: `${headImg}`})`
-width: 100%;
-max-height: 10vh;
-position: absolute;
-object-fit: cover;
-z-index: -1;
-`; 
-
 
 const StyledHeader = styled.header`
 postition: absolute;
@@ -19,6 +9,8 @@ left: 0;
 height: 10vh;
 width: 100%;
 text-transform: uppercase;
+background: linear-gradient(40deg, #484848, #121212);
+background-repeat: no-reapeat;
 `;
 const Logo = styled.h1`
 font-size: 2rem;
@@ -33,8 +25,7 @@ const Header = () => {
 
     return ( 
         <StyledHeader >
-            <HeaderImg />
-        <Logo>Video games search</Logo>
+        <Logo>VGS - video game search</Logo>
     </StyledHeader>
      );
 }

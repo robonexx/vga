@@ -7,7 +7,7 @@ import Btn from './components/Btn/Btn'
 
 const API_URL = process.env.REACT_APP_API_URL
 const API_KEY = process.env.REACT_APP_API_KEY
-const Game_search_url = `${process.env.REACT_APP_API_URL} ?key= ${process.env.REACT_APP_API_KEY} &search=`
+const Game_search_url = `${process.env.REACT_APP_API_URL}?key=${process.env.REACT_APP_API_KEY}&search=`
 
 const MainPage = styled.div`
 height: 100vh;

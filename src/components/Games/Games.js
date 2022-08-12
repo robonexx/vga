@@ -11,11 +11,12 @@ import {SiNintendo } from 'react-icons/si'
   position: relative;
   margin: 1.5rem 2rem;
   width: 260px;
-  background-color: #fafafa;
+  background-color: rgb(224, 92, 51);
   text-align: center;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+  color: white;
  
 &>h4 {
   height: fit-content;
